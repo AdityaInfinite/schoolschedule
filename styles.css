@@ -1,0 +1,16 @@
+colgroup col.success {
+    background-color: #ffc107!important;
+    border-color: green!important;
+    color: black!important;
+}
+div.container div{
+    margin-bottom: 10px!important;
+    margin-top: 10px!important;
+}
+.jumbotron{
+    margin: 0px;
+    width: 100%
+}
+.tableCon{
+    width: 100%;
+}
