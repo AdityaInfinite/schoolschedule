@@ -14,98 +14,132 @@
 
 <body>
 
-	<div class="jumbotron jumbotron-fluid">
+	<!-- <div class="jumbotron jumbotron-fluid"> -->
+	<div class="jumboton">
 		<div class="container">
-			Time
-			<button id="btn"></button>
-			<div>Now <button id="NowPeriod" class="btn btn-outline-success">period</button></div>
-			<div>Next <button class="btn btn-outline-warning">period</button>
+			<div id="clock">8:10:45</div>
+			<div id="nowNext">
+				Now <button id="NowPeriod" class="btn btn-outline-success">period</button>
+				Next <button class="btn btn-outline-warning">period</button>
 				in <button class="btn btn-outline-warning">time</button>
 			</div>
 		</div>
 	</div>
+	<script>
+		setInterval(showTime, 1000);
+		function showTime() {
+			let time = new Date();
+			let hour = time.getHours();
+			let min = time.getMinutes();
+			let sec = time.getSeconds();
+			am_pm = "AM";
 
-	</div>
-	<!--  class="table table-bordered table-dark table-striped" -->
-	<div class="tableCon">
-		<table class="table table-bordered table-dark table-striped"  id="myTable">
-			<colgroup>
-				<col id="0">
-				<col id="1">
-				<col id="2">
-				<col id="3">
-				<col id="4">
-				<col id="5">
-			</colgroup>
-			<thead>
-				<tr>
-					<th id="00">#</th>
-					<th id="01">Monday</th>
-					<th id="02">Tuesday</th>
-					<th id="03">Wednesday</th>
-					<th id="04">Thursday</th>
-					<th id="05">Friday</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th id="10" scope="row">1</th>
-					<td id="11">English</td>
-					<td id="12">Hindi</td>
-					<td id="13">English</td>
-					<td id="14">Hindi</td>
-					<td id="15">Chemistry</td>
-				</tr>
-				<tr>
-					<th id="20" scope="row">2</th>
-					<td id="21">Maths</td>
-					<td id="22">Maths</td>
-					<td id="23">SST(Ass..)</td>
-					<td id="24">Biology</td>
-					<td id="25">Biology</td>
-				</tr>
-				<tr style="text-align: center;" >
-					<th colspan="6">break</th>
-				</tr>
-				<tr>
-					<th id="30" scope="row">3</th>
-					<td id="31">Maths(Ass..)</td>
-					<td id="32">Music/Dance</td>
-					<td id="33">Computer</td>
-					<td id="34">English(Ass..)</td>
-					<td id="35">Art</td>
-				</tr>
-				<tr>
-					<th id="40" scope="row">4</th>
-					<td id="41">Sanskrit</td>
-					<td id="42">Hindi</td>
-					<td id="43">Maths</td>
-					<td id="44">Sanskrit</td>
-					<td id="45">History</td>
-				</tr>
-				<tr style="text-align: center;">
-					<th colspan="6">break</th>
-				</tr>
-				<tr>
-					<th id="50" scope="row">5</th>
-					<td id="51">History</td>
-					<td id="52">HPE</td>
-					<td id="53">English</td>
-					<td id="54">Geography</td>
-					<td id="55">Physics</td>
-				</tr>
-				<tr>
-					<th id="60" scope="row">6</th>
-					<td id="61">Chemistry</td>
-					<td id="62">GK</td>
-					<td id="63">Maths</td>
-					<td id="64">Physics</td>
-					<td id="65">Hindi(Ass..)</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<script src="script.js"></script>
+			if (hour > 12) {
+				hour -= 12;
+				am_pm = "PM";
+			}
+			if (hour == 0) {
+				hr = 12;
+				am_pm = "AM";
+			}
+
+			hour = hour < 10 ? "0" + hour : hour;
+			min = min < 10 ? "0" + min : min;
+			sec = sec < 10 ? "0" + sec : sec;
+
+			let currentTime = hour + ":"
+				+ min + ":" + sec + am_pm;
+
+			document.getElementById("clock")
+				.innerHTML = currentTime;
+		}
+
+		showTime(); 
+	</script>
+</body>
+
+</html>
+</div>
+<!--  class="table table-bordered table-dark table-striped" -->
+<div class="tableCon">
+	<table class="table table-bordered table-dark " id="myTable">
+		<colgroup>
+			<col id="day0">
+			<col id="day1">
+			<col id="day2">
+			<col id="day3">
+			<col id="day4">
+			<col id="day5">
+		</colgroup>
+		<thead>
+			<tr>
+				<th id="0">#</th>
+				<th id="1">Monday</th>
+				<th id="2">Tuesday</th>
+				<th id="3">Wednesday</th>
+				<th id="4">Thursday</th>
+				<th id="5">Friday</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th id="00" scope="row">1</th>
+				<td id="01">English</td>
+				<td id="02">Hindi</td>
+				<td id="03">English</td>
+				<td id="04">Hindi</td>
+				<td id="05">Chemistry</td>
+			</tr>
+			<tr>
+				<th id="10" scope="row">2</th>
+				<td id="11">Maths</td>
+				<td id="12">Maths</td>
+				<td id="13">SST(Ass..)</td>
+				<td id="14">Biology</td>
+				<td id="15">Biology</td>
+			</tr>
+			<tr style="text-align: center;">
+				<th id="20" colspan="6">break</th>
+			</tr>
+			<tr>
+				<th id="30" scope="row">3</th>
+				<td id="31">Maths(Ass..)</td>
+				<td id="32">Music/Dance</td>
+				<td id="33">Computer</td>
+				<td id="34">English(Ass..)</td>
+				<td id="35">Art</td>
+			</tr>
+			<tr>
+				<th id="40" scope="row">4</th>
+				<td id="41">Sanskrit</td>
+				<td id="42">Hindi</td>
+				<td id="43">Maths</td>
+				<td id="44">Sanskrit</td>
+				<td id="45">History</td>
+			</tr>
+			<tr style="text-align: center;">
+				<th id="50" colspan="6">break</th>
+			</tr>
+			<tr>
+				<th id="60" scope="row">5</th>
+				<td id="61">History</td>
+				<td id="62">HPE</td>
+				<td id="63">English</td>
+				<td id="64">Geography</td>
+				<td id="65">Physics</td>
+			</tr>
+			<tr>
+				<th id="70" scope="row">6</th>
+				<td id="71">Chemistry</td>
+				<td id="72">GK</td>
+				<td id="73">Maths</td>
+				<td id="74">Physics</td>
+				<td id="75">Hindi(Ass..)</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<script src="script.js"></script>
 </body>
 
 </html>

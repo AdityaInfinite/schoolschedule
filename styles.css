@@ -7,10 +7,37 @@ div.container div{
     margin-bottom: 10px!important;
     margin-top: 10px!important;
 }
-.jumbotron{
+.jumboton{
     margin: 0px;
-    width: 100%
+    width: 100%;
+    background-color: rgb(35, 38, 39);
+    padding: 50px;
 }
 .tableCon{
     width: 100%;
+}
+#clock { 
+    font-size: large;
+    /* width: 700px;  */
+    /* margin: 200px;  */
+    text-align: center; 
+    border-radius: 20px; 
+    background-color: #484E53;
+    color: white;
+} 
+#nowNext{
+    font-size: large;
+    /* width: 700px;  */
+    /* margin: 200px;  */
+    text-align: center; 
+    vertical-align: middle;
+    border-radius: 20px; 
+    margin: auto;
+    padding: 10px;
+    background-color: #484E53;
+    color: white;
+}
+table{
+    margin: 0px!important;
+
 }
