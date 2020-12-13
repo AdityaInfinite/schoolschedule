@@ -1,5 +1,4 @@
-var date;
-var time;
+var date = new Date("December 10, 2020 11:1:00");
 var day;
 // format of cell id is (period)(day)
 setInterval(doAll, 1000);
@@ -9,7 +8,8 @@ function doAll() {
     periodHighlight();
 }
 function showTime() {
-    date = new Date("December 10, 2020 8:31:00");
+    date = new Date("December 10, 2020 11:1:00");
+    //date = new Date();
     hour = date.getHours();
     min = date.getMinutes();
     sec = date.getSeconds();
@@ -79,7 +79,7 @@ function periodHighlight() {
             }
 
         }else{
-            console.log("no class");
+            console.log("not "+ period +" class");
         }
     }
 
@@ -87,11 +87,14 @@ function periodHighlight() {
 }
 
 function checkPeriod(StartHour, StartMinute, EndHour, EndMinute) {
-    if ((date.getHours() >= StartHour) && (date.getMinutes() >= StartMinute) && (date.getHours() <= EndHour) && (date.getMinutes() <= EndMinute)) {
-        return true;
+    if ((date.getHours() >= StartHour) && (date.getMinutes() >= StartMinute)) {
+        if((date.getHours() <= EndHour) && (date.getMinutes() <= EndMinute)){
+            return true;
+        }
     }
     else {
         // console.log(`st=${StartHour}:${StartMinute} now=${date.getHours()}:${date.getMinutes()}`)
+        console.log(`${StartHour}:${StartMinute} | ${date.getHours()}:${date.getMinutes()} | ${EndHour}:${EndMinute}`)
         return false;
     }
 }
