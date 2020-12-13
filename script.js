@@ -1,15 +1,16 @@
-var date = new Date("December 10, 2020 11:1:00");
+// var date = new Date("December 10, 2020 8:35:00");
+var date;
 var day;
 // format of cell id is (period)(day)
 setInterval(doAll, 1000);
+
 function doAll() {
     showTime();
-
     periodHighlight();
 }
+
 function showTime() {
-    date = new Date("December 10, 2020 11:1:00");
-    //date = new Date();
+    date = new Date("December 10, 2020 2:11:00");
     hour = date.getHours();
     min = date.getMinutes();
     sec = date.getSeconds();
@@ -35,66 +36,59 @@ function showTime() {
     document.getElementById("clock")
         .innerHTML = currentTime;
 }
+
 doAll();
 dayHighlight();
+
 function dayHighlight() {
     var x = document.getElementById("myTable").rows[0].cells;
     var y = document.getElementById("myTable").rows;
-    // console.log(checkPeriod(12, 0, 1, 40));
-    console.log(day)
     $(`#day${day}`).toggleClass("success");
-    console.log(x[day].innerText);
-    // $(x[day]).css("background-color", "red");
-    // $(x[day]).css("border-color", "blue");
-    // document.getElementById("btn").innerHTML = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-    //$(`#${1}${day}`).html("hi");
 }
+
 function periodHighlight() {
     var ClasTim = [
-        [8, 30, 9, 10],
-        [9, 20, 10, 0],
-        [9, 59, 10, 19],
-        [10, 20, 11, 00],
-        [11, 10, 11, 50],
-        [11, 51, 12, 9],
-        [12, 10, 12, 50],
-        [1, 0, 1, 40]
+        ['08:30:00', '09:10:00'],
+        ['09:20:00', '10:00:00'],
+        ['10:00:00', '10:20:00'],
+        ['10:20:00', '11:00:00'],
+        ['11:10:00', '11:50:00'],
+        ['11:50:00', '12:10:00'],
+        ['12:10:00', '12:50:00'],
+        ['01:00:00', '01:40:00']
     ];
     for (let period = 0; period < ClasTim.length; period++) {
-        // if (period === 2 || period === 5) {
-        //     console.log(document.getElementById(`${period}0`).innerText);
-        // }else{
-        //     console.log(document.getElementById(`${period}${day}`).innerText);
-        // }
 
-        if (checkPeriod(ClasTim[period][0], ClasTim[period][1], ClasTim[period][2], ClasTim[period][3])) {
-            // $(`#${period}${day}`).html("hi");
-            // console.log(period);
+        if (checkPeriod(ClasTim[period][0], ClasTim[period][1])) {
+
             if (period === 2 || period === 5) {
-                $(`#${period}0`).html("hi");
                 document.getElementById("NowPeriod").innerText = document.getElementById(`${period}0`).innerHTML
-            }else{
+            } else {
                 document.getElementById("NowPeriod").innerText = document.getElementById(`${period}${day}`).innerText;
-                console.log(document.getElementById(`${period}${day}`).innerText);
             }
 
-        }else{
-            console.log("not "+ period +" class");
+        } else {
+            document.getElementById("NowPeriod").innerText = "no class"
         }
     }
 
 
 }
 
-function checkPeriod(StartHour, StartMinute, EndHour, EndMinute) {
-    if ((date.getHours() >= StartHour) && (date.getMinutes() >= StartMinute)) {
-        if((date.getHours() <= EndHour) && (date.getMinutes() <= EndMinute)){
-            return true;
-        }
+function checkPeriod(startTime, endTime) {
+
+    var s = startTime.split(':');
+    var dt1 = new Date(date.getFullYear(), date.getMonth(), date.getDate(),
+        parseInt(s[0]), parseInt(s[1]), parseInt(s[2]));
+
+    var e = endTime.split(':');
+    var dt2 = new Date(date.getFullYear(), date.getMonth(),
+        date.getDate(), parseInt(e[0]), parseInt(e[1]), parseInt(e[2]));
+
+    if (date >= dt1 && date <= dt2) {
+        return true;
     }
     else {
-        // console.log(`st=${StartHour}:${StartMinute} now=${date.getHours()}:${date.getMinutes()}`)
-        console.log(`${StartHour}:${StartMinute} | ${date.getHours()}:${date.getMinutes()} | ${EndHour}:${EndMinute}`)
         return false;
     }
 }
