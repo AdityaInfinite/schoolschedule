@@ -1,7 +1,9 @@
 // var date = new Date("December 10, 2020 8:35:00");
+// format of cell id is (period)(day)
+
 var date;
 var day;
-// format of cell id is (period)(day)
+
 setInterval(doAll, 1000);
 
 function doAll() {
@@ -10,7 +12,7 @@ function doAll() {
 }
 
 function showTime() {
-    date = new Date("December 10, 2020 2:11:00");
+    date = new Date();
     hour = date.getHours();
     min = date.getMinutes();
     sec = date.getSeconds();
@@ -57,18 +59,37 @@ function periodHighlight() {
         ['12:10:00', '12:50:00'],
         ['01:00:00', '01:40:00']
     ];
-    for (let period = 0; period < ClasTim.length; period++) {
 
+    isClass = false;
+    for (let period = 0; period < ClasTim.length; period++) {
         if (checkPeriod(ClasTim[period][0], ClasTim[period][1])) {
 
             if (period === 2 || period === 5) {
-                document.getElementById("NowPeriod").innerText = document.getElementById(`${period}0`).innerHTML
+                document.getElementById("NowPeriod").innerText = document.getElementById(`${period}0`).innerHTML;
+                document.getElementById("NextPeriod").innerText = document.getElementById(`${period + 1}${day}`).innerHTML;
+                isClass = true;
             } else {
                 document.getElementById("NowPeriod").innerText = document.getElementById(`${period}${day}`).innerText;
+                document.getElementById("NextPeriod").innerText = document.getElementById(`${period + 1}${day}`).innerText;
+                isClass = true;
+
+                var e = ClasTim[period + 1][0].split(':');
+                var dt3 = new Date(date.getFullYear(), date.getMonth(),
+                    date.getDate(), parseInt(e[0]), parseInt(e[1]), parseInt(e[2]));
+                document.getElementById("NextInTime").innerText = (dt3 - date) / 60000 + " minutes";
             }
 
-        } else {
-            document.getElementById("NowPeriod").innerText = "no class"
+        } else if (period === ClasTim.length - 1 && isClass === false) {
+            document.getElementById("NowPeriod").innerText = "no class";
+        }
+        if (period < ClasTim.length - 1) {
+            // var f = ClasTim[period][1].split(':');
+            // var dt4 = new Date(date.getFullYear(), date.getMonth(),
+            //     date.getDate(), parseInt(f[0]), parseInt(f[1]), parseInt(f[2]));
+            // document.getElementById("NextInTime").innerText = ((dt4 - date) / 60000) + " minutes";
+            // document.getElementById("NextPeriod").innerText = "School End";
+            document.getElementById("NextInTime").innerText = "-";
+            document.getElementById("NextPeriod").innerText = "School End";
         }
     }
 
