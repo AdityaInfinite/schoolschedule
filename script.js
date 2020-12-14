@@ -13,9 +13,9 @@ function doAll() {
 
 function showTime() {
     date = new Date();
-    hour = date.getHours();
-    min = date.getMinutes();
-    sec = date.getSeconds();
+    var hour = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
     day = date.getDay();
     am_pm = "AM";
 
@@ -84,7 +84,7 @@ function periodHighlight() {
                 date.getDate(), parseInt(e[0]), parseInt(e[1]), parseInt(e[2]));
             document.getElementById("NextInTime").innerText = Math.trunc((dt3 - date) / 60000) + " minutes";
 
-            if (period === ClasTim.length - 2) {
+            if (period === ClasTim.length - 1) {
                 // var f = ClasTim[period][1].split(':');
                 // var dt4 = new Date(date.getFullYear(), date.getMonth(),
                 //     date.getDate(), parseInt(f[0]), parseInt(f[1]), parseInt(f[2]));
@@ -93,7 +93,7 @@ function periodHighlight() {
                 document.getElementById("NextInTime").innerText = "-";
                 document.getElementById("NextPeriod").innerText = "School End";
             }
-        } else if (period === ClasTim.length - 1 && isClass === false) {
+        }/* else if (period === ClasTim.length - 1 && isClass === false) {
             document.getElementById("NowPeriod").innerText = "no class";
 
             var e = ClasTim[period][1].split(':');
@@ -106,7 +106,7 @@ function periodHighlight() {
             }else{
                 // check time between which periods
             }
-        }
+        }*/
     }
 
 
