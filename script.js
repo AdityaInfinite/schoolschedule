@@ -50,14 +50,14 @@ function dayHighlight() {
 
 function periodHighlight() {
     var ClasTim = [
-        ['08:30:00', '09:10:00'],
-        ['09:20:00', '10:00:00'],
+        ['08:30:00', '09:10:00'],//
+        ['09:20:00', '10:00:00'],//small break here
         ['10:00:00', '10:20:00'],
-        ['10:20:00', '11:00:00'],
-        ['11:10:00', '11:50:00'],
+        ['10:20:00', '11:00:00'],//
+        ['11:10:00', '11:50:00'],//small break here
         ['11:50:00', '12:10:00'],
-        ['12:10:00', '12:50:00'],
-        ['01:00:00', '01:40:00']
+        ['12:10:00', '12:50:00'],//
+        ['01:00:00', '01:40:00']//small break here
     ];
 
     isClass = false;
@@ -73,16 +73,17 @@ function periodHighlight() {
                 console.log("next class");
                 if (period === 1 || period === 4) {
                     document.getElementById("NextPeriod").innerText = document.getElementById(`${period + 1}0`).innerText;
-                }else{
+                } else {
                     document.getElementById("NextPeriod").innerText = document.getElementById(`${period + 1}${day}`).innerText;
                 }
                 isClass = true;
-
-                var e = ClasTim[period + 1][0].split(':');
-                var dt3 = new Date(date.getFullYear(), date.getMonth(),
-                    date.getDate(), parseInt(e[0]), parseInt(e[1]), parseInt(e[2]));
-                document.getElementById("NextInTime").innerText = Math.trunc((dt3 - date) / 60000 )+ " minutes";
             }
+
+            var e = ClasTim[period + 1][0].split(':');
+            var dt3 = new Date(date.getFullYear(), date.getMonth(),
+                date.getDate(), parseInt(e[0]), parseInt(e[1]), parseInt(e[2]));
+            document.getElementById("NextInTime").innerText = Math.trunc((dt3 - date) / 60000) + " minutes";
+
             if (period === ClasTim.length - 2) {
                 // var f = ClasTim[period][1].split(':');
                 // var dt4 = new Date(date.getFullYear(), date.getMonth(),
@@ -92,9 +93,19 @@ function periodHighlight() {
                 document.getElementById("NextInTime").innerText = "-";
                 document.getElementById("NextPeriod").innerText = "School End";
             }
-
         } else if (period === ClasTim.length - 1 && isClass === false) {
             document.getElementById("NowPeriod").innerText = "no class";
+
+            var e = ClasTim[period][1].split(':');
+            var dt3 = new Date(date.getFullYear(), date.getMonth(),
+                date.getDate(), parseInt(e[0]), parseInt(e[1]), parseInt(e[2]));
+            document.getElementById("NextInTime").innerText = Math.trunc((dt3 - date) / 60000) + " minutes";
+            if (date > dt3) {
+                document.getElementById("NextInTime").innerText = "-";
+                document.getElementById("NextPeriod").innerText = "School Ended";
+            }else{
+                // check time between which periods
+            }
         }
     }
 
