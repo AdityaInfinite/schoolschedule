@@ -70,7 +70,12 @@ function periodHighlight() {
                 isClass = true;
             } else {
                 document.getElementById("NowPeriod").innerText = document.getElementById(`${period}${day}`).innerText;
-                document.getElementById("NextPeriod").innerText = document.getElementById(`${period + 1}${day}`).innerText;
+                console.log("next class");
+                if (period === 1 || period === 4) {
+                    document.getElementById("NextPeriod").innerText = document.getElementById(`${period + 1}0`).innerText;
+                }else{
+                    document.getElementById("NextPeriod").innerText = document.getElementById(`${period + 1}${day}`).innerText;
+                }
                 isClass = true;
 
                 var e = ClasTim[period + 1][0].split(':');
