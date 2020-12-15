@@ -4,6 +4,17 @@
 var date;
 var day;
 
+var ClasTim = [
+    ['08:30:00', '09:10:00'],//
+    ['09:20:00', '10:00:00'],//small break here
+    ['10:00:00', '10:20:00'],
+    ['10:20:00', '11:00:00'],//
+    ['11:10:00', '11:50:00'],//small break here
+    ['11:50:00', '12:10:00'],
+    ['12:10:00', '12:50:00'],//
+    ['01:00:00', '01:40:00']//small break here
+];
+
 setInterval(doAll, 1000);
 
 function doAll() {
@@ -49,16 +60,6 @@ function dayHighlight() {
 }
 
 function periodHighlight() {
-    var ClasTim = [
-        ['08:30:00', '09:10:00'],//
-        ['09:20:00', '10:00:00'],//small break here
-        ['10:00:00', '10:20:00'],
-        ['10:20:00', '11:00:00'],//
-        ['11:10:00', '11:50:00'],//small break here
-        ['11:50:00', '12:10:00'],
-        ['12:10:00', '12:50:00'],//
-        ['01:00:00', '01:40:00']//small break here
-    ];
 
     isClass = false;
     for (let period = 0; period < ClasTim.length; period++) {
@@ -89,11 +90,10 @@ function periodHighlight() {
                 // var dt4 = new Date(date.getFullYear(), date.getMonth(),
                 //     date.getDate(), parseInt(f[0]), parseInt(f[1]), parseInt(f[2]));
                 // document.getElementById("NextInTime").innerText = ((dt4 - date) / 60000) + " minutes";
-                // document.getElementById("NextPeriod").innerText = "School End";
                 document.getElementById("NextInTime").innerText = "-";
                 document.getElementById("NextPeriod").innerText = "School End";
             }
-        }/* else if (period === ClasTim.length - 1 && isClass === false) {
+        } else if (period === ClasTim.length - 1 && isClass === false) {
             document.getElementById("NowPeriod").innerText = "no class";
 
             var e = ClasTim[period][1].split(':');
@@ -104,9 +104,9 @@ function periodHighlight() {
                 document.getElementById("NextInTime").innerText = "-";
                 document.getElementById("NextPeriod").innerText = "School Ended";
             }else{
-                // check time between which periods
+                timeBetweenPeriods();
             }
-        }*/
+        }
     }
 
 
@@ -127,6 +127,13 @@ function checkPeriod(startTime, endTime) {
     }
     else {
         return false;
+    }
+}
+
+function timeBetweenPeriods(){
+    for (let index = 0; index < ClasTim.length; index++) {
+        const element = ClasTim[index];
+        
     }
 }
 
