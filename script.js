@@ -167,11 +167,8 @@ function timeBetweenPeriods() {
         );
 
         if (date >= brStart && date <= brEnd) {
-            document.getElementById("NextInTime").innerText =
-                (brEnd - date) / 60000 + " minutes";
-            document.getElementById("NextPeriod").innerText = document.getElementById(
-                `${index + 1}${day}`
-            ).innerText;
+            document.getElementById("NextInTime").innerText = Math.trunc((brEnd - date) / 60000) + " minutes";
+            document.getElementById("NextPeriod").innerText = document.getElementById(`${index + 1}${day}`).innerText;
         } else {
             // console.log(`${brStart}|${date}|${brEnd}  @${index}`);
         }
