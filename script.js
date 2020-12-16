@@ -25,7 +25,7 @@ function dayHighlight() {
 };
 
 function showTime() {
-    date = new Date("December 10, 2020 13:38:00"); // new Date("December 10, 2020 8:35:00");
+    date = new Date(); // new Date("December 10, 2020 8:35:00");
     var hour = date.getHours();
     var min = date.getMinutes();
     var sec = date.getSeconds();
