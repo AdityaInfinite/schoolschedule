@@ -7,11 +7,14 @@ div.container div{
     margin-bottom: 10px!important;
     margin-top: 10px!important;
 }
-.jumboton{
+.jumboton , body{
     margin: 0px;
     width: 100%;
     background-color: rgb(35, 38, 39);
-    padding: 50px;
+    padding: 30px;
+}
+body { 
+    padding-top: 0px;
 }
 .tableCon{
     width: 100%;
@@ -39,5 +42,13 @@ div.container div{
 }
 table{
     margin: 0px!important;
-
+}
+body::-webkit-scrollbar{
+    width: 0.35rem;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #343A40;
+}
+body::-webkit-scrollbar-track{
+    background-color:rgb(35, 38, 39);
 }

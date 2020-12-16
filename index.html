@@ -9,19 +9,16 @@
 	<script src="dependencies/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
-
-	<!-- <div class="jumbotron jumbotron-fluid"> -->
 	<div class="jumboton">
 		<div class="container">
 			<div id="clock">8:10:45</div>
 			<div id="nowNext">
 				Now <button id="NowPeriod" class="btn btn-outline-success">period</button>
-				Next <button class="btn btn-outline-warning">period</button>
-				in <button class="btn btn-outline-warning">time</button>
+				Next <button id="NextPeriod" class="btn btn-outline-warning">period</button>
+				in <button id="NextInTime" class="btn btn-outline-warning">time</button>
 			</div>
 		</div>
 	</div>
@@ -54,7 +51,7 @@
 				.innerHTML = currentTime;
 		}
 
-		showTime(); 
+		showTime();
 	</script>
 </body>
 
@@ -140,6 +137,6 @@
 	</table>
 </div>
 <script src="script.js"></script>
-</body>
 
+</body>
 </html>
