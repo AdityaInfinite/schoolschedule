@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>School Schedule</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- Optional theme -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<div class="form">
+		<label for="class">
+			<pre> Class </pre>
+		</label>
+		<select name="class" class="form-control" id="class">
+			<option value="8">8</option>
+			<option value="7">7</option>
+			<option value="6">6</option>
+		</select>
+		<label for="section">
+			<pre> Section </pre>
+		</label>
+		<select name="section" class="form-control" id="section">
+			<option value="A">A</option>
+			<option value="B">B</option>
+			<option	value="C">C</option>
+			<option value="D">D</option>
+		</select>
+	</div>
+	<button class="btn btn-primary" onclick="done()">submit</button>
+</body>
+<script>
+	async function done(){
+		Class = $("#class").val();
+		Section = $("#section").val();
+		const data = { Class, Section };
+		const options = {
+			method: 'POST',
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(data)
+		}
+		const responce = await fetch("/api", options);
+		const json = await responce.json();
+		console.log(json);
+	}
+</script>
+</html>

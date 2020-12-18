@@ -1,0 +1,17 @@
+{
+  "name": "schoolschedule",
+  "version": "1.0.0",
+  "description": "Interactive Time Table for my school",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AdityaInfinite",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "nedb": "^1.8.0",
+    "node-fetch": "^2.6.1"
+  }
+}

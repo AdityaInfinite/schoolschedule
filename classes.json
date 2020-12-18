@@ -1,0 +1,22 @@
+{
+    "A8":[
+        ["English","Hindi","English","Hindi","Chemistry"],
+        ["Maths","Maths","SST(Ass..)","Biology","Biology"],
+        ["break"],
+        ["Maths(Ass..)","Music/Dance","Computer","English(Ass..)","Art"],
+        ["Sanskrit","Hindi","Maths","Sanskrit","History"],
+        ["break"],
+        ["History","HPE","English","Geography","Physics"],
+        ["Chemistry","GK","Maths","Physics","Hindi(Ass..)"]
+    ],
+    "B7":[
+        ["HPE","English","Hindi","Maths","English"],
+        ["Hindi","Science","SST","Music/Dance","Maths"],
+        ["break"],
+        ["Science","Maths","Sanskrit","SST","Art"],
+        ["SST","GK","Science","Computer","Sanskrit"],
+        ["break"],
+        ["Maths","Hindi","Maths","Science","SST(Ass..)"],
+        ["Hindi(Ass..)","Maths(Ass..)","Science(Ass..)","English(Ass..)","English(Ass..)"]
+    ]
+}
