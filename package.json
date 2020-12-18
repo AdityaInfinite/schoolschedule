@@ -10,8 +10,14 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "fs": "0.0.1-security",
-    "nedb": "^1.8.0",
-    "node-fetch": "^2.6.1"
-  }
+    "fs": "0.0.1-security"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdityaInfinite/ApjTimeTable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AdityaInfinite/ApjTimeTable/issues"
+  },
+  "homepage": "https://github.com/AdityaInfinite/ApjTimeTable#readme"
 }
