@@ -9,7 +9,8 @@ const database = new Datastore('database.db');
 database.loadDatabase();
 
 const app = express();
-app.listen(3000, () => console.log('listening at 3000'));
+const port = process.env.PORT || 3000;
+app.listen(3000, () => console.log(`listening at ${port}`));
 app.use(express.static('pub/'));
 app.use(express.json());
 
