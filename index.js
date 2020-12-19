@@ -3,6 +3,10 @@ const express = require('express');
 'use strict';
 
 const fs = require('fs');
+const Datastore = require('nedb');
+
+const database = new Datastore('database.db');
+database.loadDatabase();
 
 const app = express();
 app.listen(3000, () => console.log('listening at 3000'));
@@ -16,6 +20,7 @@ app.post('/getdata', (request, response) => {
     var date = new Date()
     var MyTimestamp = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} | ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     request.body.timestamp = MyTimestamp;
+    database.insert(request.body);
     const Class = request.body.Class;
     var TimeTable
     switch (Class) {
@@ -28,7 +33,6 @@ app.post('/getdata', (request, response) => {
         default:
             break;
     }
-    console.log(Class);
     response.json({
         timeTable: TimeTable,
         status: "success"
@@ -38,5 +42,15 @@ app.post('/getdata', (request, response) => {
 app.get('/api',(request,response) => {
     response.json(classes);
     response.end();
+});
+app.get('/logs', (request, response) => {
+    database.find({}, (err, data) => {
+      if (err) {
+          console.log(err);
+        response.end();
+        return;
+      }
+      response.json(data);
+    });
 });
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All logs</title>
+    <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+    <h1>ALL LOGS</h1>
+    <table id="myTable" style="border: 1px solid white;">
+
+    </table>
+    <script>
+        getData();
+        async function getData() {
+            const response = await fetch('/logs');
+            const data = await response.json();
+            var content = "<thead><tr><th>class</th><th>platform</th><th>Time</th></tr></thead>";
+            for (item of data) {
+                str = item.Class
+                if (str != "noClassSelected") {
+                    str = str.split('').reverse().join('')
+                }
+                content += `<tr><td>${str}</td><td>${item.os}</td><td>${item.timestamp}</td></tr>`;
+                document.getElementById("myTable").innerHTML = content;
+            }
+        }
+    </script>
+    <style>
+        body {
+            color: chartreuse;
+            background-color: black;
+            font-family: sans-serif;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid white;
+        }
+    </style>
+</body>
+
+</html>
