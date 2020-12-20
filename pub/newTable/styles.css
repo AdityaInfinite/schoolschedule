@@ -12,11 +12,15 @@ select{
     margin: auto;
     padding: 20px;
     color: white;
-    background-color: aquamarine;
+    background-color: #3E444A!important;
 }
 body{
     padding-top: 15%;
     margin: auto;
     text-align: center;
-    background-color: aquamarine;
+    background-color: #3E444A!important;
+    color: white!important;
+}
+label{
+    padding:0px 10px;
 }
