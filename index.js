@@ -10,7 +10,7 @@ database.loadDatabase();
 
 const app = express();
 const port = process.env.PORT || 3000;
-app.listen(3000, () => console.log(`listening at ${port}`));
+app.listen(port, () => console.log(`listening at ${port}`));
 app.use(express.static('pub/'));
 app.use(express.json());
 
