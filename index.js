@@ -31,6 +31,9 @@ app.post('/getdata', (request, response) => {
         case "B7":
             TimeTable = classes.B7;
             break;
+        case "D7":
+            TimeTable = classes.D7;
+            break;
         default:
             break;
     }
@@ -40,21 +43,21 @@ app.post('/getdata', (request, response) => {
     });
     response.end();
 });
-app.get('/api',(request,response) => {
+app.get('/api', (request, response) => {
     response.json(classes);
     response.end();
 });
 app.get('/logs', (request, response) => {
     database.find({}, (err, data) => {
-      if (err) {
-          console.log(err);
-        response.end();
-        return;
-      }
-      response.json(data);
+        if (err) {
+            console.log(err);
+            response.end();
+            return;
+        }
+        response.json(data);
     });
 });
-app.get('/new',(request,response) => {
-    response.sendFile(`${__dirname.replace(/\\/g,"/")}/pub/newTable/index.html`)
+app.get('/new', (request, response) => {
+    response.sendFile(`${__dirname.replace(/\\/g, "/")}/pub/newTable/index.html`)
 });
 
