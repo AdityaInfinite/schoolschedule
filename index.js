@@ -34,6 +34,9 @@ app.post('/getdata', (request, response) => {
         case "D7":
             TimeTable = classes.D7;
             break;
+        case "B12":
+            TimeTable = classes.B12;
+            break;
         default:
             break;
     }

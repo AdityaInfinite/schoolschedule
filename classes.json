@@ -28,5 +28,15 @@
         ["break"],
         ["SST(Ass..)","SST","Sanskrit","Hindi","Science"],
         ["Hindi","Maths","English(Ass..)","HPE","Sanskrit(Ass..)"]
+    ],
+    "B12":[
+        ["Bio/Eco","Bio/Eco","Physics","Bio/Eco","Physics"],
+        ["Physics","Physics","Bio/Eco","Math/CS","Maths/CS"],
+        ["break"],
+        ["English","Maths/CS","Chemistry","English","Chemistry"],
+        ["Maths/CS","Chemistry","English","Chemistry","English"],
+        ["break"],
+        ["Maths/CS","Bio/Eco","Chemistry","Physics","Phy/Chem(Ass..)"],
+        ["","","","",""]
     ]
 }
