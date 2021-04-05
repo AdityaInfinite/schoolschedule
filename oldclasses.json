@@ -1,0 +1,41 @@
+{"A8":[
+    ["English","Hindi","English","Hindi","Chemistry"],
+    ["Maths","Maths","SST(Ass..)","Biology","Biology"],
+    ["break"],
+    ["Maths(Ass..)","HPE","Computer","English(Ass..)","Art"],
+    ["Sanskrit","Hindi","Maths","Sanskrit","History"],
+    ["break"],
+    ["History","Music/Dance","English","Geography","Physics"],
+    ["Chemistry","GK","Maths","Phy/Sci (Ass..)","Hindi(Ass..)"]
+],
+"B7":[
+    ["HPE","English","Hindi","Maths","English"],
+    ["Hindi","Science","SST","Music/Dance","Maths"],
+    ["break"],
+    ["Science","Maths","Sanskrit","SST","Art"],
+    ["SST","GK","Science","Computer","Sanskrit"],
+    ["break"],
+    ["Maths","Hindi","Maths","Science","SST(Ass..)"],
+    ["Hindi(Ass..)","Maths(Ass..)","Science(Ass..)","English(Ass..)","English(Ass..)"]
+],
+"D7":[
+    ["Maths","GK","Science","Maths","Maths"],
+    ["Art","SST","Maths","Science(Ass..)","SST"],
+    ["break"],
+    ["Science","English","English","Science","Maths(Ass..)"],
+    ["Hindi(Ass..)","Computer","Music/Dance","English","Hindi"],
+    ["break"],
+    ["SST(Ass..)","SST","Sanskrit","Hindi","Science"],
+    ["Hindi","Maths","English(Ass..)","HPE","Sanskrit(Ass..)"]
+],
+"B12":[
+    ["Bio/Eco","Bio/Eco","Physics","Bio/Eco","Physics"],
+    ["Physics","Physics","Bio/Eco","Math/CS","Maths/CS"],
+    ["break"],
+    ["English","Maths/CS","Chemistry","English","Chemistry"],
+    ["Maths/CS","Chemistry","English","Chemistry","English"],
+    ["break"],
+    ["Maths/CS","Bio/Eco","Chemistry","Physics","Phy/Chem(Ass..)"],
+    ["","","","",""]
+]
+} 

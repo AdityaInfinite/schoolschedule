@@ -25,17 +25,8 @@ app.post('/getdata', (request, response) => {
     const Class = request.body.Class;
     var TimeTable
     switch (Class) {
-        case "A8":
-            TimeTable = classes.A8;
-            break;
-        case "B7":
-            TimeTable = classes.B7;
-            break;
-        case "D7":
-            TimeTable = classes.D7;
-            break;
-        case "B12":
-            TimeTable = classes.B12;
+        case "A9":
+            TimeTable = classes.A9;
             break;
         default:
             break;
