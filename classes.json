@@ -1,12 +1,12 @@
 {
     "A9":[
-        ["English","History","Maths","Maths","Physics"],
-        ["Maths","Physics","HPE","Chemisty","Maths"],
+        ["English","History","Maths","Maths","English"],
+        ["Maths","Physics","HPE","English","Computer"],
         ["break"],
-        ["Economics","SST (Ass..)","History","Sci(Ass..)","English"],
-        ["Chemistry","Hindi","Hindi(Ass..)","Biology","Eng(Ass..)"],
+        ["Economics","Biology","History","Science (Ass..)","English"],
+        ["Chemistry","Hindi","Hindi","Biology","Maths"],
         ["break"],
-        ["Maths(Ass..)","English","Biology","Hindi","Hindi"],
-        ["Geography","Maths","Hindi","Eng(Ass..)","Computer"]
+        ["Maths (Ass..)","English (Ass..)","Chemistry","Hindi","Hindi"],
+        ["Geography","Maths","Hindi (Ass..)","Physics","SST (Ass..)"]
     ]
 }
