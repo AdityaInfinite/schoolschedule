@@ -10,12 +10,14 @@ div.container div{
 .jumboton , body{
     margin: 0px;
     width: 100%;
-    background-color: rgb(35, 38, 39);
+    /* background-color: rgb(35, 38, 39); */
     padding: 0px;
 }
 body { 
     padding: 30px;
     margin: 0px;
+	/* background-image: url("https://images.chesscomfiles.com/uploads/v1/theme/101411-0.2d687d92.jpg"); */
+	background-color: rgb(35, 38, 39);
 }
 
 footer{

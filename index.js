@@ -31,6 +31,12 @@ app.post('/getdata', (request, response) => {
 		case "B9":
 			TimeTable = classes.B9;
 			break;
+		case "D9":
+			TimeTable = classes.D9;
+			break;
+		case "C10":
+			TimeTable = classes.C10;
+			break;
         default:
             break;
     }

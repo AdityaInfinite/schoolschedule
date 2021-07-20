@@ -17,6 +17,26 @@
 		["Chemistry","Maths","Physics","Hindi","Hindi"],
 		["break"],
 		["Maths Ass..","Hindi","Hindi Ass..","Chemistry","Maths Ass.."],
-		["Sci Ass..","Biology","Chemistry","Endlish","Biology"]
+		["Sci Ass..","Biology","Chemistry","English","Biology"]
+	],
+	"D9":[
+		["Biology","SST Ass..","Maths","Maths Ass..","Biology"],
+		["Chemistry","Physics","Physics","Maths","Hindi"],
+		["break"],
+		["Physics","Hindi","HPE","Endlish Ass.. ","Chemistry"],
+		["Hindi","Maths","Hindi","Hindi","Physics"],
+		["break"],
+		["Sci Ass..","Hindi Ass..","Chemistry","Maths","Eng Ass.."],
+		["Maths","Maths","Computer","Hindi","Maths"]
+	],
+	"C10":[
+		["History","Sci Ass..","History","Hindi","Hindi"],
+		["English","Hindi","Maths","Geography","Physics"],
+		["break"],
+		["Maths","Computer","Biology","Biology","Maths"],
+		["Hindi","Maths","Chemistry","English","English"],
+		["break"],
+		["Chemistry","Eng Ass..","SST Ass..","Maths","English"],
+		["Hindi Ass..","Physics","Economics","Computer","Maths Ass.."]
 	]
 }
