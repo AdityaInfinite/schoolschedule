@@ -16,7 +16,7 @@ if (cookies.class) {
 }
 
 $('select').on('change', function () {
-    document.cookie = `class=${$("#class").val()}`
+    document.cookie = `class=${$("#class").val()}; expires=${targetDate}`
     classSelected($("#class").val());
 });
 
