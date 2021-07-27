@@ -6,18 +6,18 @@
 		["Economics","Biology","History","Sci Ass..","English"],
 		["Chemistry","Hindi","Hindi","Biology","Maths"],
 		["break"],
-		["Maths Ass..","English Ass..","Chemistry","Hindi","Hindi"],
+		["Maths Ass..","English","Chemistry","Hindi","Hindi"],
 		["Geography","Maths","Hindi Ass..","Physics","SST Ass.."]
 	],
 	"B9":[
-		["Physics","History","Sci Ass..","History","English Ass.."],
+		["Economics","English Ass..","English","History","English"],
 		["Hindi","Computer","History","Maths","Maths"],
 		["break"],
-		["Maths","Geography","Maths","HPE","Economics"],
-		["Chemistry","Maths","Physics","Hindi","Hindi"],
+		["Maths","Geography","Maths","HPE","SST Ass.."],
+		["English","Maths","Physics","Hindi","Hindi"],
 		["break"],
-		["Maths Ass..","Hindi","Hindi Ass..","Chemistry","Maths Ass.."],
-		["Sci Ass..","Biology","Chemistry","English","Biology"]
+		["English","Hindi","Hindi Ass..","Chemistry","Maths Ass.."],
+		["Physics","Biology","Chemistry","Science Ass..","Biology"]
 	],
 	"C9":[
 		["Physics","Hindi","Maths","Chemistry","Chemistry"],
@@ -66,7 +66,7 @@
 		["Hindi","Physics","Maths","Maths Ass..","Hindi"],
 		["Maths","Hindi Ass..","Sci Ass..","HPE","SST Ass.."],
 		["break"],
-		["Physics","Maths","HIndi","Computer","Maths"],
+		["Physics","Maths","Hindi","Computer","Maths"],
 		["History","Hindi","Chemistry","Sci Ass..","Economics"]
 	]
 }
