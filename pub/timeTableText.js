@@ -13,11 +13,23 @@ if (cookies.class) {
             return false; // break the loop, no need to look further
         }
     });
+	if (cookies.id){
+		sendlog(cookies.id,cookies.class)
+	}else{
+		newid()
+	}
 }
 
 $('select').on('change', function () {
-    document.cookie = `class=${$("#class").val()}; expires=${targetDate}`
-    classSelected($("#class").val());
+	var clas = $("#class").val()
+    document.cookie = `class=${clas}; expires=${targetDate}`
+    classSelected(clas);
+
+	if (cookies.id){
+		sendlog(cookies.id,clas)
+	}else{
+		newid()
+	}
 });
 
 async function classSelected(Class) {
@@ -32,7 +44,7 @@ async function classSelected(Class) {
     }
     const responce = await fetch("/getdata", options);
     json = await responce.json();
-    console.log(json.timeTable)
+    // console.log(json.timeTable)
 
     for (let day = 1; day <= 5; day++) {
         for (let period = 0; period <= 7; period++) {
@@ -40,3 +52,30 @@ async function classSelected(Class) {
         }
     }
 }
+async function sendlog(id,Class) {
+	const options = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ Class, id })
+    }
+	const responce = await fetch("/addlog", options);
+    json = await responce.json();
+	console.log(json.status)
+}
+async function newid() {
+	const options = {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        // body: JSON.stringify("")
+    }
+	const responce = await fetch("/newid", options);
+    json = await responce.json();
+	document.cookie = `id=${json.id}; expires=${targetDate}`
+	console.log(json.id)
+
+}
+newid()

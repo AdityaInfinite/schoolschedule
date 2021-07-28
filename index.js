@@ -69,7 +69,20 @@ app.get('/logs', (request, response) => {
         response.json(data);
     });
 });
-app.get('/new', (request, response) => {
-    response.sendFile(`${__dirname.replace(/\\/g, "/")}/pub/newTable/index.html`)
+app.post('/addlog', (request, response) => {
+	console.log("got a log")
+	console.log(request.body);
+	response.json({
+        status: "success"
+    });
+    response.end();
+	console.log("logged it!");
 });
-
+app.post('/newid', (request, response) => {
+	console.log("got a id request")
+	response.json({
+        id: "69"
+    });
+    response.end();
+	console.log("logged it!");
+});
