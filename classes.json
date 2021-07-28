@@ -20,14 +20,14 @@
 		["Physics","Biology","Chemistry","Science Ass..","Biology"]
 	],
 	"C9":[
-		["Physics","Hindi","Maths","Chemistry","Chemistry"],
-		["Hindi","Chemistry","Physics","Hindi Ass..","Maths"],
+		["Physics","Hindi","Maths","Chemistry","Hindi Ass.."],
+		["Hindi","Chemistry","Physics","Economics","Maths"],
 		["break"],
-		["Maths Ass..","Maths","HPE","Hindi","Computer"],
-		["Hindi","Maths","English Ass..","Hindi","Maths Ass.."],
+		["English","Maths","Hinstory","Hindi","History"],
+		["Biology","HPE","English","Geography","English"],
 		["break"],
-		["Maths","English Ass..","Sci Ass..","HPE","Biology"],
-		["Biology","Maths","Maths","Computer","SST Ass.."]
+		["Hindi","English Ass..","Sci Ass..","Maths Ass..","Biology"],
+		["Maths","English","Maths","Computer","SST Ass.."]
 	],
 	"D9":[
 		["Biology","SST Ass..","Maths","Maths Ass..","Biology"],

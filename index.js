@@ -69,7 +69,3 @@ app.get('/logs', (request, response) => {
         response.json(data);
     });
 });
-app.get('/new', (request, response) => {
-    response.sendFile(`${__dirname.replace(/\\/g, "/")}/pub/newTable/index.html`)
-});
-
