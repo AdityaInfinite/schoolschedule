@@ -11,7 +11,7 @@ var ClasTim = [
     ["12:10:00", "12:50:00"], //
     ["13:00:00", "13:40:00"], //small break above here
 ];
-
+console.log("github version");
 function doAll() {
     showTime();
     periodHighlight();
