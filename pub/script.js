@@ -1,7 +1,12 @@
 // format of cell id is (period)(day)
-var date;
-var day;
-var ClasTim = [
+bool = false
+document.querySelector("body > div > div:nth-child(3) > label > span").onclick = function(){
+	bool = !bool; 
+	if(bool){
+		notify("this is how you will be notified")
+	}
+};
+var day, date, ClasTim = [
     ["08:30:00", "09:10:00"], //
     ["09:20:00", "10:00:00"], //small break above here
     ["10:00:00", "10:20:00"], //break
@@ -11,21 +16,18 @@ var ClasTim = [
     ["12:10:00", "12:50:00"], //
     ["13:00:00", "13:40:00"], //small break above here
 ];
-console.log("github version");
 function doAll() {
     showTime();
     periodHighlight();
 }
 setInterval(doAll, 1000);
 doAll();
-dayHighlight();
 
-function dayHighlight() {
-    $(`#day${day}`).toggleClass("success");
-};
+$(`#day${day}`).toggleClass("success"); // highlights day
 
 function showTime() {
     date = new Date(); // new Date("December 10, 2020 8:35:00");
+// date = new Date("December 10, 2020 11:49:00");
     var hour = date.getHours();
     var min = date.getMinutes();
     var sec = date.getSeconds();
@@ -52,6 +54,7 @@ function showTime() {
 
 function periodHighlight() {
     isClass = false;
+	periodName = document.getElementById("NowPeriod").innerText;
     for (let period = 0; period < ClasTim.length; period++) {
         if (checkPeriod(ClasTim[period][0], ClasTim[period][1])) {
             var e;
@@ -68,7 +71,6 @@ function periodHighlight() {
             } else {
                 document.getElementById("NowPeriod").innerText = 
                     document.getElementById(`${period}${day}`).innerText;
-                //console.log("next class");
                 if (period === 1 || period === 4) {
                     document.getElementById("NextPeriod").innerText =
                         document.getElementById(`${period + 1}0`).innerText;
@@ -92,7 +94,9 @@ function periodHighlight() {
                 }
                 isClass = true;
             }
-
+			if(bool && periodName != document.getElementById("NowPeriod").innerText){
+				console.log("change")
+			}
         } else if (period === ClasTim.length - 1 && isClass === false) {
             document.getElementById("NowPeriod").innerText = "no class";
             document.getElementById("NowInTime").innerText = "-";
@@ -114,6 +118,10 @@ function periodHighlight() {
             }
         }
     }
+}
+function periodHighlight2() {
+	/* better implementation of periodHighlight */
+
 }
 
 function checkPeriod(startTime, endTime) {
@@ -146,7 +154,6 @@ function checkPeriod(startTime, endTime) {
 
 function timeBetweenPeriods() {
     for (let index = 0; index < ClasTim.length - 1; index++) {
-        // console.log(index);
         var brStTimes = ClasTim[index][1].split(":");
         var brEndTimes = ClasTim[index + 1][0].split(":");
         var brStart = new Date(
@@ -170,13 +177,11 @@ function timeBetweenPeriods() {
             document.getElementById("NextInTime").innerText = Math.trunc((brEnd - date) / 60000) + " minutes";
             document.getElementById("NextPeriod").innerText = document.getElementById(`${index + 1}${day}`).innerText;
         } else {
-            // console.log(`${brStart}|${date}|${brEnd}  @${index}`);
         }
     }
 }
 
 function InTime(e, id) {
-    // console.log(`a=${e[0]}; b=${e[1]}; c=${e[2]} for ${id}`)
     min=" minutes"
     var dt3 = new Date(
         date.getFullYear(),
@@ -191,3 +196,25 @@ function InTime(e, id) {
     }
     document.getElementById(id).innerText = Math.trunc((dt3 - date) / 60000) + min;
 }
+function notify(msg) {
+	// Let's check if the browser supports notifications
+	if (!("Notification" in window)) {
+	  alert("This browser does not support desktop notification");
+	}
+  
+	// Let's check whether notification permissions have already been granted
+	else if (Notification.permission === "granted") {
+	  // If it's okay let's create a notification
+	  var notification = new Notification(msg);
+	}
+  
+	// Otherwise, we need to ask the user for permission
+	else if (Notification.permission !== "denied") {
+	  Notification.requestPermission().then(function (permission) {
+		// If the user accepts, let's create a notification
+		if (permission === "granted") {
+		  var notification = new Notification(msg);
+		}
+	  });
+	}
+  }
