@@ -6,11 +6,11 @@ var cookies = document.cookie
 if (cookies.class) {
     classSelected(cookies.class);
     $('select option').each(function () {
-        var $this = $(this); // cache this jQuery object to avoid overhead
+        var $this = $(this);
 
-        if ($this.val() == cookies.class) { // if this option's value is equal to our value
-            $this.prop('selected', true); // select this option
-            return false; // break the loop, no need to look further
+        if ($this.val() == cookies.class) {
+            $this.prop('selected', true);
+            return false;
         }
     });
 }
@@ -32,7 +32,6 @@ async function classSelected(Class) {
     }
     const responce = await fetch("/getdata", options);
     json = await responce.json();
-    console.log(json.timeTable)
 
     for (let day = 1; day <= 5; day++) {
         for (let period = 0; period <= 7; period++) {
