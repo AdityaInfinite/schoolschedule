@@ -1,3 +1,23 @@
+const process = require('process');
+var args = process.argv;
+switch (args[2]) {
+	case 'debug-mode':
+		// no database logs and extra console.logs
+		mode = 1
+		console.log('running in debug mode')
+		break;
+	case 'testing-mode':
+		// no database logs
+		mode = 2
+		console.log('running in testing mode (no db-logs)')
+		break;
+	default:
+		// database logs only here
+		mode = 0
+		console.log('running in default mode')
+		break;
+}
+
 const { request, response } = require('express');
 const express = require('express');
 'use strict';
@@ -21,7 +41,9 @@ app.post('/getdata', (request, response) => {
     var date = new Date()
     var MyTimestamp = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} | ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     request.body.timestamp = MyTimestamp;
-    database.insert(request.body);
+	if(!mode){
+    	database.insert(request.body);
+	}
     const Class = request.body.Class;
     var TimeTable
     switch (Class) {
